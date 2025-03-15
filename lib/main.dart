@@ -1,4 +1,4 @@
-import 'package:bir_bir/pages/add_new/cubit/add_product_cubit.dart';
+import 'package:bir_bir/pages/create_new_ad/cubit/create_new_ad_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
         providers: [
           BlocProvider(
-            create: (_) => AddProductCubit(),
+            create: (_) => CreateNewAdCubit(),
           ),
         ],
         child: MaterialApp.router(

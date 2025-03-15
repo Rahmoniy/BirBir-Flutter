@@ -1,5 +1,6 @@
 import 'package:bir_bir/custom_widgets/custom_text.dart';
-import 'package:bir_bir/pages/add_new/cubit/add_product_cubit.dart';
+
+import 'package:bir_bir/pages/create_new_ad/cubit/create_new_ad_cubit.dart';
 import 'package:bir_bir/pages/home/widgets/cagtegory_horizontal/category_list.dart';
 import 'package:bir_bir/pages/home/widgets/carousel/carousel.dart';
 import 'package:bir_bir/pages/home/widgets/product/product_vertical_list.dart';
@@ -13,7 +14,7 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final products = context.watch<AddProductCubit>().state;
+    final products = context.watch<CreateNewAdCubit>().state;
     SystemChrome.setSystemUIOverlayStyle(
       const SystemUiOverlayStyle(
         statusBarColor: Colors.transparent, // Makes status bar transparent

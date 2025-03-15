@@ -2,8 +2,8 @@ import 'dart:io';
 
 import 'package:bir_bir/assets/app_colors.dart';
 import 'package:bir_bir/custom_widgets/custom_touchable_card.dart';
+import 'package:bir_bir/custom_widgets/image_slider.dart';
 import 'package:bir_bir/models/product_model.dart';
-import 'package:bir_bir/pages/category_detail/category_detail.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -67,7 +67,7 @@ class _Main extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          ProductImageSlider(
+          ImageSlider(
             onFavoriteToggle: () {},
             isFavorite: isFavorite,
             src: imageSrc,

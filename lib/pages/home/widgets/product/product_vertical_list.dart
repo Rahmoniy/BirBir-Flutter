@@ -1,6 +1,7 @@
 import 'package:bir_bir/custom_widgets/custom_text.dart';
 import 'package:bir_bir/models/product_model.dart';
-import 'package:bir_bir/pages/add_new/cubit/add_product_cubit.dart';
+import 'package:bir_bir/pages/create_new_ad/cubit/create_new_ad_cubit.dart';
+
 import 'package:bir_bir/pages/home/widgets/product/product_item.dart';
 import 'package:bir_bir/providers/products_provider.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +14,7 @@ class ProductVerticalList extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     // final availableProducts = ref.watch(productsProvider);
-    final products = context.watch<AddProductCubit>().state;
+    final products = context.watch<CreateNewAdCubit>().state;
 
     return products.length > 0
         ? SliverGrid(

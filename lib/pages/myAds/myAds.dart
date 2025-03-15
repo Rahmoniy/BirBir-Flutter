@@ -1,4 +1,4 @@
-import 'package:bir_bir/custom_widgets/custom_touchable_card.dart';
+import 'package:bir_bir/custom_widgets/app_button.dart';
 import 'package:bir_bir/custom_widgets/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -25,12 +25,8 @@ class Myads extends StatelessWidget {
             height: 200,
           ),
           const Spacer(),
-          CustomTouchableCard(
-            padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 5),
-            onTap: () {
-              context.push('/add_new');
-            },
-            bgColor: Colors.pink,
+          AppButton(
+            onTap: () => context.push('/create_image'),
             child: const Row(
               mainAxisAlignment: MainAxisAlignment.center,
               // crossAxisAlignment: CrossAxisAlignment.center,

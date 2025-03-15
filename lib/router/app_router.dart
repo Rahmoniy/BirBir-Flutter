@@ -1,9 +1,10 @@
 import 'package:bir_bir/models/product_model.dart';
-import 'package:bir_bir/pages/add_new/add_new.dart';
-import 'package:bir_bir/pages/add_new_name/add_new_name.dart';
-import 'package:bir_bir/pages/add_new_price/add_new_price.dart';
+
 import 'package:bir_bir/pages/auth/register.dart';
 import 'package:bir_bir/pages/category_detail/category_detail.dart';
+import 'package:bir_bir/pages/create_new_ad/create_image/create_image.dart';
+import 'package:bir_bir/pages/create_new_ad/create_name/create_name.dart';
+import 'package:bir_bir/pages/create_new_ad/create_price/create_price.dart';
 import 'package:bir_bir/pages/error/error.dart';
 import 'package:bir_bir/pages/launch/launch.dart';
 import 'package:bir_bir/pages/product_detail/view/product_detail_view.dart';
@@ -55,16 +56,16 @@ class Routing {
         },
       ),
       GoRoute(
-        path: "/add_new",
-        builder: (context, state) => const AddNew(),
+        path: "/create_image",
+        builder: (context, state) => const CreateImage(),
       ),
       GoRoute(
-        path: "/add_new_name",
-        builder: (context, state) => const AddNewName(),
+        path: "/create_name",
+        builder: (context, state) => const CreateName(),
       ),
       GoRoute(
-        path: "/add_new_price",
-        builder: (context, state) => const AddNewPrice(),
+        path: "/create_price",
+        builder: (context, state) => const CreatePrice(),
       ),
       GoRoute(
         path: "/category_product",

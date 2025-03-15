@@ -2,14 +2,7 @@ import 'dart:io';
 
 import 'package:uuid/uuid.dart';
 
-enum Product {
-  householdAppliances,
-  electronics,
-  furnitureAndInterior,
-  beauty,
-  accessories,
-  forChildren
-}
+enum CurrencyType { usd, sum }
 
 class ProductModel {
   final String id;
@@ -19,14 +12,20 @@ class ProductModel {
   final num price;
   final String city;
   final String postedTime;
+  final bool isFree;
+  final bool isUrgent;
+  final CurrencyType currency;
 
   ProductModel({
     String? id,
     required this.name,
     required this.category,
     required this.images,
-    required this.price,
     required this.city,
+    required this.currency,
+    this.price = 0,
+    this.isFree = false,
+    this.isUrgent = false,
     String? postedTime,
   })  : id = id ?? const Uuid().v4(),
         postedTime = postedTime ?? DateTime.now().toIso8601String();
@@ -40,6 +39,9 @@ class ProductModel {
     num? price,
     String? city,
     String? postedTime,
+    CurrencyType? currency,
+    bool? isFree,
+    bool? isUrgent,
   }) {
     return ProductModel(
       id: id ?? this.id,
@@ -48,7 +50,10 @@ class ProductModel {
       images: images ?? this.images,
       price: price ?? this.price,
       city: city ?? this.city,
+      currency: currency ?? this.currency,
       postedTime: postedTime ?? this.postedTime,
+      isFree: isFree ?? this.isFree,
+      isUrgent: isUrgent ?? this.isUrgent,
     );
   }
 
@@ -62,6 +67,8 @@ class ProductModel {
       'price': price,
       'city': city,
       'postedTime': postedTime,
+      'isFree': isFree,
+      'isUrgent': isUrgent,
     };
   }
 
@@ -75,11 +82,14 @@ class ProductModel {
       price: json['price'],
       city: json['city'],
       postedTime: json['postedTime'],
+      currency: json['currency'],
+      isFree: json['isFree'],
+      isUrgent: json['isUrgent'],
     );
   }
 
   @override
   String toString() {
-    return 'ProductModel(\nid: $id,\nname: $name,\ncategory: $category,\nprice: $price,\ncity: $city,\npostedTime: $postedTime)';
+    return 'ProductModel(\nid: $id,\nname: $name,\ncategory: $category,\nprice: $price,\ncity: $city,\npostedTime: $postedTime,\nisFree: $isFree,\nisUrgent: $isUrgent,\ncurrency: $currency)';
   }
 }
