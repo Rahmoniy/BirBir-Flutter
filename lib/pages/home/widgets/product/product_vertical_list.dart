@@ -1,9 +1,5 @@
-import 'package:bir_bir/custom_widgets/custom_text.dart';
-import 'package:bir_bir/models/product_model.dart';
 import 'package:bir_bir/pages/create_new_ad/cubit/create_new_ad_cubit.dart';
-
 import 'package:bir_bir/pages/home/widgets/product/product_item.dart';
-import 'package:bir_bir/providers/products_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -13,10 +9,9 @@ class ProductVerticalList extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    // final availableProducts = ref.watch(productsProvider);
     final products = context.watch<CreateNewAdCubit>().state;
 
-    return products.length > 0
+    return products.isNotEmpty
         ? SliverGrid(
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2, // Number of columns
@@ -31,6 +26,8 @@ class ProductVerticalList extends ConsumerWidget {
               childCount: products.length, // Total number of items
             ),
           )
-        : Text('empty');
+        : const Center(
+            child: Text('empty'),
+          );
   }
 }

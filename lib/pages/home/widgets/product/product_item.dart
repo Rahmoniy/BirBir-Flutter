@@ -1,5 +1,4 @@
-import 'package:bir_bir/custom_widgets/custom_text.dart';
-import 'package:bir_bir/custom_widgets/product_badge.dart';
+import 'package:bir_bir/app_widgets/app_widgets.dart';
 import 'package:bir_bir/models/product_model.dart';
 import 'package:bir_bir/providers/favorite_products_provider.dart';
 import 'package:flutter/material.dart';
@@ -76,7 +75,7 @@ class ProductItem extends ConsumerWidget {
           const SizedBox(
             height: 5,
           ),
-          CustomText(
+          AppText(
             product.price.toString(),
             isBold: true,
             fontSize: 17,
@@ -84,14 +83,14 @@ class ProductItem extends ConsumerWidget {
           const SizedBox(
             height: 5,
           ),
-          CustomText(
+          AppText(
             product.name,
             fontSize: 15,
           ),
           const SizedBox(
             height: 5,
           ),
-          CustomText(
+          AppText(
             '${product.city}\n${product.postedTime}',
             color: Colors.grey,
             fontSize: 13,

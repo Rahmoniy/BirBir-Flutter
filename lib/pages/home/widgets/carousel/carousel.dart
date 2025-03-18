@@ -15,14 +15,13 @@ class _InfiniteCarouselState extends State<Carousel> {
 
   @override
   Widget build(BuildContext context) {
-    print('%%%%, ${1 % 7}');
     return SizedBox(
       height: 150,
       child: PageView.builder(
         controller: _pageController,
         itemBuilder: (context, index) {
-          final actualIndex = index % items.length; // Loop back the index
-          return CarouselItem();
+          // final actualIndex = index % items.length; // Loop back the index
+          return const CarouselItem();
         },
       ),
     );

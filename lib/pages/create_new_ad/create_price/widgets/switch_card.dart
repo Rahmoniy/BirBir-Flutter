@@ -1,5 +1,5 @@
+import 'package:bir_bir/app_widgets/app_widgets.dart';
 import 'package:bir_bir/assets/app_colors.dart';
-import 'package:bir_bir/custom_widgets/custom_touchable_card.dart';
 import 'package:flutter/material.dart';
 
 class SwitchCard extends StatelessWidget {
@@ -17,7 +17,7 @@ class SwitchCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomTouchableCard(
+    return AppTouchableCard(
       height: 70,
       onTap: () {},
       child: Row(
@@ -45,6 +45,5 @@ class SwitchCard extends StatelessWidget {
         ],
       ),
     );
-    ;
   }
 }

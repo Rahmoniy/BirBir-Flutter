@@ -1,6 +1,5 @@
 import 'package:bir_bir/pages/home/widgets/cagtegory_horizontal/category_item.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 class CategoryList extends StatelessWidget {
   const CategoryList({super.key});

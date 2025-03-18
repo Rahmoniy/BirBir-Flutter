@@ -11,7 +11,7 @@ class AuthService {
 
   Future<AuthResponse> signUpWithEmailPassword(
       String email, String password) async {
-    print('Email: $email, Password: $password');
+    // print('Email: $email, Password: $password');
     return await _supabase.auth.signUp(email: email, password: password);
   }
 

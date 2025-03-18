@@ -12,7 +12,6 @@ import 'package:bir_bir/pages/search/view/search_view.dart';
 import 'package:bir_bir/pages/tabs.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:bir_bir/pages/product_detail/product_detail.dart';
 
 class Routing {
   static final Routing _instance = Routing._internal();

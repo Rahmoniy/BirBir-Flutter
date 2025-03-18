@@ -1,6 +1,5 @@
+import 'package:bir_bir/app_widgets/app_widgets.dart';
 import 'package:bir_bir/assets/app_colors.dart';
-import 'package:bir_bir/custom_widgets/app_button.dart';
-import 'package:bir_bir/custom_widgets/image_slider.dart';
 import 'package:bir_bir/models/product_model.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -29,7 +28,7 @@ class _ProductItemState extends State<ProductItem> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            ImageSlider(
+            AppImageSlider(
               src: widget.product.images,
               onFavoriteToggle: () {
                 setState(() {

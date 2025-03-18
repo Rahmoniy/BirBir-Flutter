@@ -32,7 +32,7 @@ class SearchHeader extends StatelessWidget {
                 borderRadius: BorderRadius.circular(15),
                 color: bgColor,
               ),
-              child: SearchContainer()),
+              child: const SearchContainer()),
         )
       ],
     );
@@ -47,7 +47,7 @@ class SearchContainer extends StatefulWidget {
 }
 
 class _SearchContainerState extends State<SearchContainer> {
-  TextEditingController _controller = TextEditingController();
+  final TextEditingController _controller = TextEditingController();
   String textValue = '';
   @override
   Widget build(BuildContext context) {

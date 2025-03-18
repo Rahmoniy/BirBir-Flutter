@@ -1,6 +1,5 @@
+import 'package:bir_bir/app_widgets/app_widgets.dart';
 import 'package:bir_bir/assets/app_colors.dart';
-import 'package:bir_bir/custom_widgets/custom_text.dart';
-import 'package:bir_bir/custom_widgets/custom_touchable_card.dart';
 import 'package:bir_bir/pages/auth/auth_service.dart';
 import 'package:flutter/material.dart';
 
@@ -33,7 +32,7 @@ class _RegisterState extends State<Register> {
           ScaffoldMessenger.of(context)
               .showSnackBar(SnackBar(content: Text("Error: $e")));
         }
-        print('Error: $e');
+        // print('Error: $e');
       }
     }
   }
@@ -81,13 +80,13 @@ class _RegisterState extends State<Register> {
                 //   child: Text("Don't have an account? Sign Up"),
                 // ),
                 const SizedBox(height: 30),
-                CustomTouchableCard(
+                AppTouchableCard(
                   padding: const EdgeInsets.symmetric(vertical: 15),
                   bgColor: AppColors.primary,
                   onTap: () {
                     if (_formKey.currentState!.validate()) _submitForm();
                   },
-                  child: const CustomText(
+                  child: const AppText(
                     textAlign: TextAlign.center,
                     isBold: true,
                     'Войти или регистрироваться',

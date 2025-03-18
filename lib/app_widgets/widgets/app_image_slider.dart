@@ -3,8 +3,8 @@ import 'dart:io';
 import 'package:bir_bir/assets/app_colors.dart';
 import 'package:flutter/material.dart';
 
-class ImageSlider extends StatefulWidget {
-  const ImageSlider({
+class AppImageSlider extends StatefulWidget {
+  const AppImageSlider({
     super.key,
     required this.onFavoriteToggle,
     required this.isFavorite,
@@ -18,10 +18,10 @@ class ImageSlider extends StatefulWidget {
   final double height;
 
   @override
-  State<ImageSlider> createState() => _ImageSliderState();
+  State<AppImageSlider> createState() => _AppImageSliderState();
 }
 
-class _ImageSliderState extends State<ImageSlider> {
+class _AppImageSliderState extends State<AppImageSlider> {
   int activePage = 0;
 
   @override

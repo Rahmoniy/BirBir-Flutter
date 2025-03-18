@@ -1,4 +1,4 @@
-import 'package:bir_bir/custom_widgets/app_button.dart';
+import 'package:bir_bir/app_widgets/app_widgets.dart';
 import 'package:bir_bir/pages/create_new_ad/create_price/widgets/main_card.dart';
 import 'package:bir_bir/pages/create_new_ad/create_price/widgets/switch_card.dart';
 import 'package:bir_bir/pages/create_new_ad/cubit/create_new_ad_cubit.dart';

@@ -1,9 +1,6 @@
 import 'package:bir_bir/pages/search/widgets/search_header.dart';
-
 import '../../../../assets/app_colors.dart';
-import 'package:bir_bir/custom_widgets/custom_touchable_card.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 class SearchView extends StatelessWidget {
   const SearchView({super.key});
@@ -71,7 +68,7 @@ class SearchView extends StatelessWidget {
                         'https://olcha.uz/image/700x700/products/2022-06-22/detskie-bodi-15928-15931-9-mesyatsev-goluboy-60924-0.jpeg',
                         height: 30,
                       ),
-                      onTap: () => print('pressed'),
+                      onTap: () {},
                     ),
                     RecommendationCard(
                       widget: Image.network(

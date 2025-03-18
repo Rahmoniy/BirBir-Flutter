@@ -1,4 +1,4 @@
-import 'package:bir_bir/custom_widgets/custom_text.dart';
+import 'package:bir_bir/app_widgets/app_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -41,7 +41,7 @@ class CategoryItem extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
-              child: CustomText(
+              child: AppText(
                 name,
                 color: const Color.fromARGB(255, 42, 42, 42),
                 fontSize: 15,

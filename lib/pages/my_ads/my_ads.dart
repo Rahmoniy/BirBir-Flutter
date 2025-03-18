@@ -1,5 +1,4 @@
-import 'package:bir_bir/custom_widgets/app_button.dart';
-import 'package:bir_bir/custom_widgets/custom_text.dart';
+import 'package:bir_bir/app_widgets/app_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -13,7 +12,7 @@ class Myads extends StatelessWidget {
         children: [
           const Padding(
             padding: EdgeInsets.fromLTRB(0, 150, 180, 0),
-            child: CustomText(
+            child: AppText(
               'Здесь будет ваши объяления и черновеки',
               isBold: true,
               fontSize: 22,
@@ -38,12 +37,15 @@ class Myads extends StatelessWidget {
                 SizedBox(
                   width: 15,
                 ),
-                CustomText(
+                AppText(
                   'Поставить объевления',
                   color: Colors.white,
                 ),
               ],
             ),
+          ),
+          const SizedBox(
+            height: 10,
           )
         ],
       ),

@@ -1,4 +1,4 @@
-import 'package:bir_bir/custom_widgets/custom_text.dart';
+import 'package:bir_bir/app_widgets/app_widgets.dart';
 import 'package:flutter/material.dart';
 
 class CarouselItem extends StatelessWidget {
@@ -6,7 +6,7 @@ class CarouselItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 3),
+      margin: const EdgeInsets.symmetric(horizontal: 3),
       width: 300,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
@@ -24,9 +24,9 @@ class CarouselItem extends StatelessWidget {
                 ),
                 margin:
                     const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
-                child: Padding(
-                  padding: const EdgeInsets.fromLTRB(3, 3, 6, 3),
-                  child: const Row(
+                child: const Padding(
+                  padding: EdgeInsets.fromLTRB(3, 3, 6, 3),
+                  child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       CircleAvatar(
@@ -41,7 +41,7 @@ class CarouselItem extends StatelessWidget {
                       SizedBox(
                         width: 5,
                       ),
-                      CustomText(
+                      AppText(
                         'Выгода до 50%',
                         color: Colors.blueGrey,
                         fontSize: 12,
@@ -50,12 +50,13 @@ class CarouselItem extends StatelessWidget {
                   ),
                 ),
               ),
-              Spacer(),
+              const Spacer(),
               Container(
-                margin: EdgeInsets.symmetric(horizontal: 15, vertical: 20),
-                child: CustomText(
+                margin:
+                    const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
+                child: const AppText(
                   'Подборка \niPhone',
-                  color: const Color.fromARGB(255, 51, 51, 51),
+                  color: Color.fromARGB(255, 51, 51, 51),
                   isBold: true,
                   fontSize: 15,
                 ),

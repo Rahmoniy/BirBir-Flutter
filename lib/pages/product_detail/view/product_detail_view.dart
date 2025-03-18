@@ -1,8 +1,6 @@
 import 'dart:io';
-
+import 'package:bir_bir/app_widgets/app_widgets.dart';
 import 'package:bir_bir/assets/app_colors.dart';
-import 'package:bir_bir/custom_widgets/custom_touchable_card.dart';
-import 'package:bir_bir/custom_widgets/image_slider.dart';
 import 'package:bir_bir/models/product_model.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -34,9 +32,9 @@ class ProductDetailView extends StatelessWidget {
                 price: product.price,
                 name: product.name,
               ),
-              _Characteristics(),
-              _Description(),
-              _ShowMap(),
+              const _Characteristics(),
+              const _Description(),
+              const _ShowMap(),
             ],
           ),
         ));
@@ -45,10 +43,7 @@ class ProductDetailView extends StatelessWidget {
 
 class _Main extends StatelessWidget {
   const _Main(
-      {super.key,
-      required this.imageSrc,
-      required this.name,
-      required this.price});
+      {required this.imageSrc, required this.name, required this.price});
 
   final List<File> imageSrc;
   final num price;
@@ -58,7 +53,7 @@ class _Main extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(15),
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
           color: AppColors.white,
           borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(15),
@@ -67,7 +62,7 @@ class _Main extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          ImageSlider(
+          AppImageSlider(
             onFavoriteToggle: () {},
             isFavorite: isFavorite,
             src: imageSrc,
@@ -75,16 +70,16 @@ class _Main extends StatelessWidget {
           ),
           Text(
             '$price sum',
-            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
           ),
           Text(
             name,
-            style: TextStyle(fontSize: 18),
+            style: const TextStyle(fontSize: 18),
           ),
-          SizedBox(
+          const SizedBox(
             height: 15,
           ),
-          CustomTouchableCard(
+          AppTouchableCard(
             padding: const EdgeInsets.symmetric(vertical: 5),
             onTap: () {},
             width: 130,
@@ -99,60 +94,46 @@ class _Main extends StatelessWidget {
 }
 
 class _Characteristics extends StatelessWidget {
-  const _Characteristics({super.key});
+  const _Characteristics();
 
   @override
   Widget build(BuildContext context) {
-    return _TitleCard(title: 'Характеристики', widget: [
-      Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          const Text(
-            'Состояние',
-            style: TextStyle(color: AppColors.grey, fontSize: 18),
+    return _TitleCard(
+      title: 'Характеристики',
+      children: [
+        _buildRow('Состояние', 'Б/у (хорошее, отличное)'),
+        const SizedBox(height: 15),
+        _buildRow('Производитель', 'Другая марка'),
+      ],
+    );
+  }
+
+  static Widget _buildRow(String label, String value) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(
+          label,
+          style: const TextStyle(color: AppColors.grey, fontSize: 18),
+        ),
+        SizedBox(
+          width: 150,
+          child: Text(
+            value,
+            style: const TextStyle(fontSize: 18),
           ),
-          SizedBox(
-            width: 150,
-            child: Text(
-              'Б/у (хорошее, отличное)',
-              style: TextStyle(
-                fontSize: 18,
-              ),
-            ),
-          ),
-        ],
-      ),
-      SizedBox(
-        height: 15,
-      ),
-      Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          const Text(
-            'Производитель',
-            style: TextStyle(color: AppColors.grey, fontSize: 18),
-          ),
-          SizedBox(
-            width: 150,
-            child: Text(
-              'Другая марка',
-              style: TextStyle(
-                fontSize: 18,
-              ),
-            ),
-          ),
-        ],
-      ),
-    ]);
+        ),
+      ],
+    );
   }
 }
 
 class _Description extends StatelessWidget {
-  const _Description({super.key});
+  const _Description();
 
   @override
   Widget build(BuildContext context) {
-    return _TitleCard(title: 'Описание', widget: [
+    return const _TitleCard(title: 'Описание', children: [
       Text(
         'Другая марка',
         style: TextStyle(
@@ -164,7 +145,7 @@ class _Description extends StatelessWidget {
 }
 
 class _ShowMap extends StatelessWidget {
-  const _ShowMap({super.key});
+  const _ShowMap();
 
   final double latitude = 41.2995; // Toshkentning kengligi
   final double longitude = 69.2401; // Toshkentning uzunligi
@@ -182,7 +163,7 @@ class _ShowMap extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return _TitleCard(title: 'Место сделки', widget: [
+    return _TitleCard(title: 'Место сделки', children: [
       GestureDetector(
         onTap: _openMap,
         child: Container(
@@ -218,10 +199,10 @@ class _ShowMap extends StatelessWidget {
 }
 
 class _TitleCard extends StatelessWidget {
-  const _TitleCard({super.key, required this.title, required this.widget});
+  const _TitleCard({required this.title, required this.children});
 
   final String title;
-  final List<Widget> widget;
+  final List<Widget> children;
 
   @override
   Widget build(BuildContext context) {
@@ -236,12 +217,12 @@ class _TitleCard extends StatelessWidget {
           children: [
             Text(
               title,
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             const SizedBox(
               height: 15,
             ),
-            ...widget,
+            ...children,
           ],
         ));
   }

@@ -1,8 +1,8 @@
-import '../../assets/app_colors.dart';
+import '../../../assets/app_colors.dart';
 import 'package:flutter/material.dart';
 
-class CustomTouchableCard extends StatelessWidget {
-  const CustomTouchableCard({
+class AppTouchableCard extends StatelessWidget {
+  const AppTouchableCard({
     super.key,
     this.child = const Text('button child', style: TextStyle(fontSize: 20)),
     this.bgColor = AppColors.lightGrey,

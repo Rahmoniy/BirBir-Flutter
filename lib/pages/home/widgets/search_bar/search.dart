@@ -1,7 +1,5 @@
+import 'package:bir_bir/app_widgets/app_widgets.dart';
 import '../../../../../assets/app_colors.dart';
-import 'package:bir_bir/custom_widgets/custom_touchable_card.dart';
-import 'package:bir_bir/custom_widgets/custom_text.dart';
-
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -21,7 +19,7 @@ class Search extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 8),
               tapTargetSize: MaterialTapTargetSize
                   .shrinkWrap, // Reduce the tap area to content size
-              minimumSize: Size(0, 0),
+              minimumSize: const Size(0, 0),
             ),
             onPressed: () {},
             child: const Row(
@@ -34,7 +32,7 @@ class Search extends StatelessWidget {
                 SizedBox(
                   width: 5,
                 ),
-                CustomText(
+                AppText(
                   'Вся страна',
                   color: Colors.grey,
                   fontSize: 15,
@@ -42,7 +40,7 @@ class Search extends StatelessWidget {
               ],
             ),
           ),
-          CustomTouchableCard(
+          AppTouchableCard(
             padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 5),
             onTap: () {
               context.push('/search');
@@ -56,7 +54,7 @@ class Search extends StatelessWidget {
                 SizedBox(
                   width: 8,
                 ),
-                CustomText(
+                AppText(
                   'Найти микроволновку',
                   color: Colors.grey,
                   fontSize: 16,

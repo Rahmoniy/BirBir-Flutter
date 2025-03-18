@@ -1,6 +1,4 @@
-import 'package:bir_bir/assets/app_colors.dart';
-import 'package:bir_bir/custom_widgets/custom_text.dart';
-import 'package:bir_bir/custom_widgets/custom_touchable_card.dart';
+import 'package:bir_bir/app_widgets/app_widgets.dart';
 import 'package:bir_bir/pages/likedProduct/liked_product.dart';
 import 'package:flutter/material.dart';
 import 'package:bir_bir/pages/auth/auth_service.dart';
@@ -54,16 +52,16 @@ class ProfileCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final double screenWidth = MediaQuery.of(context).size.width;
-    return CustomTouchableCard(
+    return AppTouchableCard(
       onTap: onTap,
-      padding: EdgeInsets.fromLTRB(15, 25, 15, 0),
+      padding: const EdgeInsets.fromLTRB(15, 25, 15, 0),
       width: (screenWidth - 40) / 2,
       height: 210,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          CustomText(
+          AppText(
             text,
             fontSize: 17,
           ),
@@ -117,7 +115,7 @@ class ProfileSettingCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomTouchableCard(
+    return AppTouchableCard(
       onTap: () {},
       bgColor: Colors.transparent,
       padding: padding,
@@ -126,7 +124,7 @@ class ProfileSettingCard extends StatelessWidget {
           Container(
             width: 40,
             height: 40,
-            padding: EdgeInsets.all(8),
+            padding: const EdgeInsets.all(8),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               color: bgColor,
@@ -136,15 +134,15 @@ class ProfileSettingCard extends StatelessWidget {
               fit: BoxFit.contain,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             width: 15,
           ),
-          CustomText(
+          AppText(
             text,
             fontSize: 18,
           ),
-          Spacer(),
-          Icon(
+          const Spacer(),
+          const Icon(
             Icons.arrow_right,
             color: Colors.grey,
           )
@@ -173,7 +171,7 @@ class MainProfileScreen extends StatelessWidget {
                 child: Center(
                   child: Column(
                     children: [
-                      const CustomText(
+                      const AppText(
                         'Мой профиль',
                         isBold: true,
                         fontSize: 20,
@@ -196,7 +194,7 @@ class MainProfileScreen extends StatelessWidget {
                                 'https://cdn-icons-png.flaticon.com/512/8249/8249304.png',
                             onTap: onChangeScreen,
                           ),
-                          Spacer(),
+                          const Spacer(),
                           ProfileCard(
                             onTap: () {},
                             text: 'Мои объевление',
@@ -210,17 +208,17 @@ class MainProfileScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 8,
             ),
-            PaddingCard(
+            const PaddingCard(
               padding: EdgeInsets.zero,
               child: ProfileSettingCard(
                   text: 'Bir Bir для бизнеса',
                   imgSrc:
                       'https://cdn-icons-png.flaticon.com/512/11671/11671417.png'),
             ),
-            SizedBox(
+            const SizedBox(
               height: 8,
             ),
             const PaddingCard(
@@ -249,19 +247,10 @@ class MainProfileScreen extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
-              child: CustomTouchableCard(
-                padding: const EdgeInsets.symmetric(vertical: 15),
-                bgColor: AppColors.primary,
-                onTap: () {
-                  authService.signOut();
-                },
-                child: const CustomText(
-                  textAlign: TextAlign.center,
-                  'Войти или регистрироваться',
-                  color: Colors.white,
-                  fontSize: 15,
-                ),
+              padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+              child: AppButton(
+                onTap: () => authService.signOut(),
+                title: 'Войти или регистрироваться',
               ),
             )
           ],

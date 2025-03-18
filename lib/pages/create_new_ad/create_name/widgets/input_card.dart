@@ -1,5 +1,5 @@
 import 'package:bir_bir/assets/app_colors.dart';
-import 'package:bir_bir/custom_widgets/app_input.dart';
+import 'package:bir_bir/app_widgets/widgets/app_input.dart';
 import 'package:flutter/material.dart';
 
 class InputCard extends StatefulWidget {

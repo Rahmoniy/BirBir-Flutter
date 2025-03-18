@@ -1,7 +1,8 @@
 import 'dart:io';
 
+import 'package:bir_bir/app_widgets/app_widgets.dart';
 import 'package:bir_bir/assets/app_colors.dart';
-import 'package:bir_bir/custom_widgets/custom_touchable_card.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
@@ -21,7 +22,6 @@ class _SelectImagesState extends State<SelectImages> {
   Future<void> pickImage() async {
     try {
       final List<XFile> images = await ImagePicker().pickMultiImage(limit: 6);
-      if (images == null) return;
 
       if (selectedImages.isNotEmpty) {
         setState(() {
@@ -34,7 +34,7 @@ class _SelectImagesState extends State<SelectImages> {
 
       widget.onSelectImage(selectedImages);
     } on PlatformException catch (e) {
-      print('Failed to pick image: $e');
+      // print('Failed to pick image: $e');
     }
   }
 
@@ -42,7 +42,7 @@ class _SelectImagesState extends State<SelectImages> {
   Widget build(BuildContext context) {
     return selectedImages.isEmpty
         ? SizedBox(
-            child: CustomTouchableCard(
+            child: AppTouchableCard(
               height: 200,
               onTap: pickImage,
               child: const Icon(
@@ -66,7 +66,7 @@ class _SelectImagesState extends State<SelectImages> {
                 itemBuilder: (context, index) {
                   if (index == selectedImages.length) {
                     // Last item → Custom Widget
-                    return CustomTouchableCard(
+                    return AppTouchableCard(
                       height: 200,
                       onTap: pickImage,
                       child: const Icon(
@@ -76,7 +76,7 @@ class _SelectImagesState extends State<SelectImages> {
                       ),
                     );
                   }
-                  return CustomTouchableCard(
+                  return AppTouchableCard(
                     onTap: () {},
                     child: Image.file(
                       File(selectedImages[index].path),

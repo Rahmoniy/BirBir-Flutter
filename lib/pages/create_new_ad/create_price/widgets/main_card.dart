@@ -1,6 +1,6 @@
 import 'package:animated_toggle_switch/animated_toggle_switch.dart';
+import 'package:bir_bir/app_widgets/app_widgets.dart';
 import 'package:bir_bir/assets/app_colors.dart';
-import 'package:bir_bir/custom_widgets/app_input.dart';
 import 'package:bir_bir/models/product_model.dart';
 import 'package:bir_bir/pages/create_new_ad/create_price/widgets/switch_card.dart';
 import 'package:bir_bir/pages/create_new_ad/cubit/create_new_ad_cubit.dart';
@@ -106,12 +106,10 @@ class ThousandsFormatter extends TextInputFormatter {
   @override
   TextEditingValue formatEditUpdate(
       TextEditingValue oldValue, TextEditingValue newValue) {
-    // Remove any non-numeric characters (e.g., spaces, commas)
     String newText = newValue.text.replaceAll(RegExp(r'\D'), '');
 
     if (newText.isEmpty) return newValue.copyWith(text: '');
 
-    // Format with spaces as thousands separator
     String formattedText = newText.replaceAllMapped(
       RegExp(r'(\d)(?=(\d{3})+(?!\d))'),
       (Match match) => '${match[1]} ',

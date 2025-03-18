@@ -1,5 +1,4 @@
-import 'package:bir_bir/custom_widgets/custom_text.dart';
-import 'package:bir_bir/custom_widgets/custom_touchable_card.dart';
+import 'package:bir_bir/app_widgets/app_widgets.dart';
 import 'package:flutter/material.dart';
 
 class Empty extends StatelessWidget {
@@ -19,7 +18,7 @@ class Empty extends StatelessWidget {
                 'https://static.vecteezy.com/system/resources/thumbnails/012/488/038/small_2x/like-3d-illustration-png.png',
                 height: 200,
               ),
-              const CustomText(
+              const AppText(
                 'Вы пока ничего не сохранили',
                 isBold: true,
                 fontSize: 20,
@@ -28,7 +27,7 @@ class Empty extends StatelessWidget {
               const SizedBox(
                 height: 15,
               ),
-              const CustomText(
+              const AppText(
                 'Сохраняйте объявления в избранное, чтобы ничего не упустить',
                 fontSize: 14,
                 color: Colors.grey,
@@ -37,10 +36,10 @@ class Empty extends StatelessWidget {
               const SizedBox(
                 height: 40,
               ),
-              CustomTouchableCard(
+              AppTouchableCard(
                 onTap: () {},
                 bgColor: const Color.fromARGB(255, 220, 71, 121),
-                child: const CustomText(
+                child: const AppText(
                   'К поиску объевление',
                   textAlign: TextAlign.center,
                   color: Colors.white,

@@ -1,4 +1,4 @@
-import 'package:bir_bir/custom_widgets/custom_text.dart';
+import 'package:bir_bir/app_widgets/app_widgets.dart';
 import 'package:flutter/material.dart';
 
 class ProductBadge extends StatelessWidget {
@@ -27,7 +27,7 @@ class ProductBadge extends StatelessWidget {
             const SizedBox(
               width: 5,
             ),
-            const CustomText(
+            const AppText(
               'Выгода до 50%',
               color: Colors.blueGrey,
               fontSize: 10,

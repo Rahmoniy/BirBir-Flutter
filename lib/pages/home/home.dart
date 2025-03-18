@@ -1,5 +1,4 @@
-import 'package:bir_bir/custom_widgets/custom_text.dart';
-
+import 'package:bir_bir/app_widgets/app_widgets.dart';
 import 'package:bir_bir/pages/create_new_ad/cubit/create_new_ad_cubit.dart';
 import 'package:bir_bir/pages/home/widgets/cagtegory_horizontal/category_list.dart';
 import 'package:bir_bir/pages/home/widgets/carousel/carousel.dart';
@@ -56,7 +55,7 @@ class Home extends StatelessWidget {
             const SliverToBoxAdapter(
               child: Padding(
                 padding: EdgeInsets.only(top: 40, left: 15),
-                child: CustomText(
+                child: AppText(
                   'Интересное 🔥',
                   isBold: true,
                   fontSize: 20,

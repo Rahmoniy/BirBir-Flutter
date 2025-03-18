@@ -1,5 +1,3 @@
-import 'package:bir_bir/pages/auth/register.dart';
-import 'package:bir_bir/pages/home/home.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
